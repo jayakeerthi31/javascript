@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mainbox{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: space-around;
+        }
+        .card{
+            height:300px;
+            width:300px;
+            margin:1%;
+            padding:1%;
+        }
+        .card img{
+            height:200px;
+        }
+        </style>
+</head>
+<body>
+    <form action="">
+        <input type="number" placeholder="Enter min price" id="minValue"/>
+        <input type="number" placeholder="Enter max price" id="maxValue"/>
+        <input type="button" class="submit" value="filter"/>
+    </form>
+    <div class="container mainbox">
+        <div class="card parent"data-value="1500">
+            <img src="https://i.pinimg.com/236x/70/1b/5f/701b5f02793fa56704f4762a04d4525e.jpg"/>
+            <p>1500</p>
+            </div>
+            <div class="card parent" data-value="2000">
+                <img src="https://i.pinimg.com/236x/12/ed/fa/12edfaaec384984097dcaf2edd16e179.jpg" />
+                <p>2000</p>
+            </div>
+                <div class="card parent"data-value="1500">
+                    <img src="https://i.pinimg.com/236x/53/40/fb/5340fba0d5132c05c5dda94ab074bcb8.jpg" />
+                    <p>1500</p>
+                </div>
+                    <div class="card parent"data-value="2500">
+                        <img src="https://i.pinimg.com/236x/2c/12/35/2c1235334fc32389077169bbd68e9972.jpg"/>
+                        <p>2500</p>
+                    </div>
+                        <div class="card parent"data-value="3500">
+                            <img src="https://i.pinimg.com/236x/11/f9/16/11f916086d69dc87fab33304cf6ff4d6.jpg" />
+                            <p>3500</p>
+                        </div>
+                            <div class="card parent"data-value="3000">
+                                <img src="https://i.pinimg.com/236x/e0/91/bd/e091bdbec1a8bc6729dbbf8540433b22.jpg"  />
+                                <p>3000</p>
+                            </div>
+                                <div class="card parent"data-value="4000">
+                                    <img src="https://i.pinimg.com/236x/b0/94/d4/b094d40260ea1d98277842bb9a0d4a0d.jpg"  />
+                                    <p>4000</p>
+                                </div>
+                                    <div class="card parent"data-value="4000">
+                                        <img src="https://i.pinimg.com/236x/f8/64/f0/f864f08370c486176a1f2c873b9bae58.jpg"  />
+                                        <p>4000</p>
+                                    </div>
+                                        </div>
+                                        <script>
+                                            subBtn=document.querySelector('.submit');
+                                        
+                                            let datavalue=document.querySelectorAll('.parent');
+                                            datavalue.forEach(function(Items){
+                                        
+                                                subBtn.addEventListener('click',function(){
+                                                    let min=document.getElementById("minValue").value;
+                                                    let max=document.getElementById("maxValue").value;
+                                                    minPI=parseInt(min);
+                                                    maxPI=parseInt(max);
+                                                
+                                                    let dataItems=Items.getAttribute('data-value');
+                                                  
+                                                    if(dataItems>=minPI && dataItems<=maxPI){
+                                                        Items.style.display="block";
+                                                    }
+                                                    else{
+                                                        Items.style.display="none";
+                                                    }
+                                                
+                                        
+                                                })
+                                            })
+                                        </script>
+</body>
+</html>
